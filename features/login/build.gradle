@@ -53,6 +53,8 @@ dependencies {
     implementation dependencies.appCompat
     implementation dependencies.material
     implementation dependencies.constraintLayout
+    implementation dependencies.coroutinesCore
+    implementation dependencies.coroutinesAndroid
     testImplementation testDependencies.junit
     androidTestImplementation testDependencies.extJunit
     androidTestImplementation testDependencies.espresso

@@ -16,7 +16,7 @@ ext {
 
     glideVersion = '4.12.0'
     gsonVersion = '2.8.9'
-    koinVersion = '2.0.1'
+    koinVersion = '2.2.3'
     retrofitVersion = '2.9.0'
     roomVersion = '2.3.0'
 
@@ -40,9 +40,10 @@ ext {
             constraintLayout: "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
 
             //Koin
-            koin: "org.koin:koin-android:$koinVersion",
-            koinCore: "org.koin:koin-core:$koinVersion",
-            koinViewModel: "org.koin:koin-androidx-viewmodel:$koinVersion",
+            koin: "io.insert-koin:koin-android:$koinVersion",
+            koinCore: "io.insert-koin:koin-core:$koinVersion",
+            koinScope: "io.insert-koin:koin-android-scope:$koinVersion",
+            koinViewModel: "io.insert-koin:koin-android-viewmodel:$koinVersion",
 
             //Retrofit
             retrofit: "com.squareup.retrofit2:retrofit:$retrofitVersion",
@@ -62,8 +63,8 @@ ext {
 
     testDependencies = [
             junit: "junit:junit:$junitVersion",
-            extJunit: "androidx.test.ext:$extJunitVersion",
-            espresso: "androidx.test.espresso:$espressoVersion",
+            extJunit: "androidx.test.ext:junit:$extJunitVersion",
+            espresso: "androidx.test.espresso:espresso-core:$espressoVersion",
             koinTest: "org.koin:koin-test:$koinVersion",
             truth: "com.google.truth:truth:$truthVersion",
             truthJava: "com.google.truth.extensions:truth-java8-extension:$truthVersion",

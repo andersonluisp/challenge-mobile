@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -41,8 +42,14 @@ dependencies {
     def testDependencies = rootProject.ext.testDependencies
 
     implementation dependencies.ktx
-    implementation dependencies.appCompat
-    implementation dependencies.material
+    implementation dependencies.coroutinesCore
+    implementation dependencies.coroutinesAndroid
+    implementation dependencies.retrofit
+    implementation dependencies.retrofitGsonConverter
+    implementation dependencies.gson
+    implementation dependencies.koin
+    implementation dependencies.koinCore
+    implementation dependencies.koinViewModel
     testImplementation testDependencies.junit
     androidTestImplementation testDependencies.extJunit
     androidTestImplementation testDependencies.espresso

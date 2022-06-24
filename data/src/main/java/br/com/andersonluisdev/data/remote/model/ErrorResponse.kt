@@ -1,4 +1,4 @@
-package br.com.andersonluisdev.data.model
+package br.com.andersonluisdev.data.remote.model
 
 import com.google.gson.annotations.SerializedName
 

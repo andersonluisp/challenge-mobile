@@ -1,4 +1,4 @@
-package br.com.andersonluisdev.data.model.profile
+package br.com.andersonluisdev.data.remote.model.profile
 
 data class StatusResponse(
     val checked: Boolean?,

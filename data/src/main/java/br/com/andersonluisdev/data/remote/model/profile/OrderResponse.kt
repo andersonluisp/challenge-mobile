@@ -1,4 +1,4 @@
-package br.com.andersonluisdev.data.model.profile
+package br.com.andersonluisdev.data.remote.model.profile
 
 import com.google.gson.annotations.SerializedName
 

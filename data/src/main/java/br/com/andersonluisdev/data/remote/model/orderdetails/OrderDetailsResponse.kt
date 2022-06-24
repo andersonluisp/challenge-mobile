@@ -1,4 +1,4 @@
-package br.com.andersonluisdev.data.model.orderdetails
+package br.com.andersonluisdev.data.remote.model.orderdetails
 
 import com.google.gson.annotations.SerializedName
 

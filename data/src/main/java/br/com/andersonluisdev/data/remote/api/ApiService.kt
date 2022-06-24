@@ -1,9 +1,9 @@
-package br.com.andersonluisdev.data.api
+package br.com.andersonluisdev.data.remote.api
 
-import br.com.andersonluisdev.data.model.login.LoginResponse
-import br.com.andersonluisdev.data.model.orderdetails.OrderDetailsResponse
-import br.com.andersonluisdev.data.model.profile.OrderResponse
-import br.com.andersonluisdev.data.model.profile.ProfileResponse
+import br.com.andersonluisdev.data.remote.model.login.LoginResponse
+import br.com.andersonluisdev.data.remote.model.orderdetails.OrderDetailsResponse
+import br.com.andersonluisdev.data.remote.model.profile.OrderResponse
+import br.com.andersonluisdev.data.remote.model.profile.ProfileResponse
 import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded

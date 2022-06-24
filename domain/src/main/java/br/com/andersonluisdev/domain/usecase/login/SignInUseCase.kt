@@ -7,6 +7,6 @@ import kotlinx.coroutines.flow.Flow
 class SignInUseCase(
     private val loginRepository: LoginRepository
 ) {
-    suspend operator fun invoke(email: String, password: String): Flow<Login> =
+    suspend operator fun invoke(email: String, password: String): Flow<Login?> =
         loginRepository.signIn(email, password)
 }

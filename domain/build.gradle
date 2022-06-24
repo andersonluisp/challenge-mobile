@@ -12,4 +12,5 @@ dependencies {
     def dependencies = rootProject.ext.dependencies
 
     implementation dependencies.coroutinesCore
+    implementation dependencies.koinCore
 }

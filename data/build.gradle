@@ -40,6 +40,9 @@ dependencies {
 
     def dependencies = rootProject.ext.dependencies
     def testDependencies = rootProject.ext.testDependencies
+    def modules = rootProject.ext.modules
+
+    implementation project(modules.domain)
 
     implementation dependencies.ktx
     implementation dependencies.coroutinesCore
@@ -49,7 +52,6 @@ dependencies {
     implementation dependencies.gson
     implementation dependencies.koin
     implementation dependencies.koinCore
-    implementation dependencies.koinViewModel
     testImplementation testDependencies.junit
     androidTestImplementation testDependencies.extJunit
     androidTestImplementation testDependencies.espresso

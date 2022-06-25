@@ -7,6 +7,7 @@ ext {
     kotlinVersion = '1.6.0'
     gradleVersion = '7.0.3'
     lifeCycleVersion = '2.4.0'
+    navVersion = '2.4.2'
 
     ktxVersion = '1.7.0'
     appCompatVersion = '1.4.0'
@@ -38,6 +39,9 @@ ext {
             lifecycle: "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion",
             material: "com.google.android.material:material:$materialVersion",
             constraintLayout: "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+            navigationFragment: "androidx.navigation:navigation-fragment-ktx:$navVersion",
+            navigationUi: "androidx.navigation:navigation-fragment-ktx:$navVersion",
+            navigationFeatures: "androidx.navigation:navigation-dynamic-features-fragment:$navVersion",
 
             //Koin
             koin: "io.insert-koin:koin-android:$koinVersion",

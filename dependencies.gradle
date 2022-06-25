@@ -80,6 +80,7 @@ ext {
             data: ":data",
             common: ":common",
             uicomponents: ":uicomponents",
-            domain: ":domain"
+            domain: ":domain",
+            home: ":features:home"
     ]
 }

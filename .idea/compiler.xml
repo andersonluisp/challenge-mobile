@@ -5,6 +5,7 @@
       <module name="AndroidChallenge.app" target="11" />
       <module name="AndroidChallenge.common" target="11" />
       <module name="AndroidChallenge.data" target="11" />
+      <module name="AndroidChallenge.features.home" target="11" />
       <module name="AndroidChallenge.features.login" target="11" />
       <module name="AndroidChallenge.uicomponents" target="11" />
     </bytecodeTargetLevel>

@@ -12,7 +12,6 @@ android {
     defaultConfig {
         minSdk globalConfiguration["minSdk"]
         targetSdk globalConfiguration["targetSdk"]
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -30,18 +29,9 @@ android {
     kotlinOptions {
         jvmTarget = globalConfiguration["jvmTarget"]
     }
-
-    buildFeatures {
-        viewBinding true
-    }
-}
-
-repositories {
-    google()
 }
 
 dependencies {
-
     def dependencies = rootProject.ext.dependencies
     def testDependencies = rootProject.ext.testDependencies
     def modules = rootProject.ext.modules
@@ -60,6 +50,8 @@ dependencies {
     implementation dependencies.koin
     implementation dependencies.koinCore
     implementation dependencies.lifecycle
+    implementation dependencies.glide
+    implementation dependencies.glideCompiler
     testImplementation testDependencies.junit
     androidTestImplementation testDependencies.extJunit
     androidTestImplementation testDependencies.espresso

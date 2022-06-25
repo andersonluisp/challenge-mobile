@@ -2,7 +2,7 @@ package br.com.andersonluisdev.data.remote.model.profile
 
 import com.google.gson.annotations.SerializedName
 
-data class ProfileResponse(
+data class UserProfileResponse(
     @SerializedName("avatar_url")
     val avatarUrl: String?,
     val city: String?,
@@ -12,5 +12,7 @@ data class ProfileResponse(
     @SerializedName("state_abbr")
     val stateAbbr: String?,
     val success: Boolean?,
-    val username: String?
+    val username: String?,
+    @SerializedName("error_message")
+    val errorMessage: String?
 )

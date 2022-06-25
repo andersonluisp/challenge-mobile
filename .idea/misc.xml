@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="common/src/main/res/layout/generic_error_layout.xml" value="0.1328125" />
         <entry key="features/login/src/main/res/layout/activity_login.xml" value="0.3382488479262673" />
         <entry key="uicomponents/src/main/res/drawable/progress_button_background.xml" value="0.2075" />
+        <entry key="uicomponents/src/main/res/layout/generic_error_layout.xml" value="0.22" />
         <entry key="uicomponents/src/main/res/layout/progress_button_layout.xml" value="0.43126520681265207" />
       </map>
     </option>

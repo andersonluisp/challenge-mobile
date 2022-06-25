@@ -35,7 +35,7 @@ ext {
             appCompat: "androidx.appcompat:appcompat:$appCompatVersion",
             coroutinesCore: "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion",
             coroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion",
-            viewModel: "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion",
+            lifecycle: "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion",
             material: "com.google.android.material:material:$materialVersion",
             constraintLayout: "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
 

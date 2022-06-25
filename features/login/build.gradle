@@ -50,6 +50,7 @@ dependencies {
     implementation project(modules.common)
     implementation project(modules.uicomponents)
     implementation project(modules.domain)
+    implementation project(modules.home)
 
     implementation dependencies.ktx
     implementation dependencies.appCompat

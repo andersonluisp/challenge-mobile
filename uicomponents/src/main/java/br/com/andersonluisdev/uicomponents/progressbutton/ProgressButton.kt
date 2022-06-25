@@ -1,4 +1,4 @@
-package com.example.mybeats.view.components
+package br.com.andersonluisdev.uicomponents.progressbutton
 
 import android.content.Context
 import android.util.AttributeSet

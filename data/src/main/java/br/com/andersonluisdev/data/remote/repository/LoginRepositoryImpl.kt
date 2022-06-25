@@ -1,6 +1,6 @@
 package br.com.andersonluisdev.data.remote.repository
 
-import br.com.andersonluisdev.data.remote.api.ApiClient
+import br.com.andersonluisdev.data.remote.api.ApiData
 import br.com.andersonluisdev.data.remote.api.ApiService
 import br.com.andersonluisdev.data.remote.mappers.login.toLoginMapper
 import br.com.andersonluisdev.data.remote.mappers.toErrorResponseMapper
@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.withContext
 
 class LoginRepositoryImpl(
-    private val apiService: ApiService = ApiClient.retrofitInstance,
+    private val apiService: ApiService,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : LoginRepository {
 
@@ -22,6 +22,7 @@ class LoginRepositoryImpl(
             flow {
                 apiService.signIn(email, password).apply {
                     if (this.isSuccessful) {
+                        saveToken(this.body()?.token)
                         emit(this.body()?.toLoginMapper())
                     } else {
                         emit(errorBody()?.toErrorResponseMapper()?.toLoginMapper())
@@ -29,4 +30,10 @@ class LoginRepositoryImpl(
                 }
             }
         }
+
+    private fun saveToken(token: String?) {
+        token?.let {
+            ApiData.token = it
+        }
+    }
 }

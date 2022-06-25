@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -58,6 +59,7 @@ dependencies {
     implementation dependencies.coroutinesAndroid
     implementation dependencies.koin
     implementation dependencies.koinCore
+    implementation dependencies.lifecycle
     testImplementation testDependencies.junit
     androidTestImplementation testDependencies.extJunit
     androidTestImplementation testDependencies.espresso

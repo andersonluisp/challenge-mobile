@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.LoginActivity">
+    tools:context=".presentation.activity.LoginActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -35,14 +35,15 @@
         android:id="@+id/logoImageView"
         android:layout_width="@dimen/login_logo_width"
         android:layout_height="@dimen/login_logo_height"
+        android:contentDescription="@null"
         android:scaleType="fitCenter"
         android:src="@drawable/logo_live_on"
-        android:contentDescription="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/horizontalGuideLine20Percent" />
 
     <TextView
+        android:id="@+id/loginLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/top_margin_signup_to_logo"
@@ -82,34 +83,46 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/loginMargin"
-        android:layout_marginEnd="@dimen/loginMargin"
         android:layout_marginTop="@dimen/top_margin_between_password_to_email"
+        android:layout_marginEnd="@dimen/loginMargin"
         android:hint="@string/label_password"
         android:theme="@style/LoginTextInputLayout_overlay"
         app:hintTextColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/emailTextInputLayout">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/passwordEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:paddingStart="0dp"
-        android:paddingEnd="0dp"
-        android:textColor="@color/white" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:textColor="@color/white" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.example.mybeats.view.components.ProgressButton
+    <br.com.andersonluisdev.uicomponents.progressbutton.ProgressButton
         android:id="@+id/loginButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/top_margin_between_password_to_button"
         android:layout_marginStart="@dimen/loginMargin"
+        android:layout_marginTop="@dimen/top_margin_between_password_to_button"
         android:layout_marginEnd="@dimen/loginMargin"
-        app:text="@string/sign_in"
-        app:layout_constraintTop_toBottomOf="@id/passwordTextInputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/passwordTextInputLayout"
+        app:text="@string/sign_in" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="loginButton, emailTextInputLayout, passwordTextInputLayout, loginLabel, logoImageView" />
+
+    <include
+        android:id="@+id/genericErrorLayout"
+        layout="@layout/generic_error_layout"
+        android:visibility="gone" />
 </androidx.constraintlayout.widget.ConstraintLayout>

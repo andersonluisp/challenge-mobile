@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -48,6 +49,7 @@ dependencies {
     implementation project(modules.data)
     implementation project(modules.common)
     implementation project(modules.uicomponents)
+    implementation project(modules.domain)
 
     implementation dependencies.ktx
     implementation dependencies.appCompat
@@ -55,6 +57,9 @@ dependencies {
     implementation dependencies.constraintLayout
     implementation dependencies.coroutinesCore
     implementation dependencies.coroutinesAndroid
+    implementation dependencies.koin
+    implementation dependencies.koinCore
+    implementation dependencies.lifecycle
     testImplementation testDependencies.junit
     androidTestImplementation testDependencies.extJunit
     androidTestImplementation testDependencies.espresso

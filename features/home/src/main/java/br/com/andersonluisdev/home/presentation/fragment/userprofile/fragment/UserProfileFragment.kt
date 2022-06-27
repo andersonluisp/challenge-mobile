@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.PagerSnapHelper
 import br.com.andersonluisdev.common.baseviewmodel.extension.onAction
 import br.com.andersonluisdev.common.baseviewmodel.extension.onStateChange
@@ -43,9 +44,13 @@ class UserProfileFragment : Fragment() {
         return binding.root
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setupRecyclerView()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupRecyclerView()
         setupArrowButtonsListener()
         setupTryAgainButtonListener()
         stateChangeListener()
@@ -58,7 +63,8 @@ class UserProfileFragment : Fragment() {
     private fun setupUserSubscriptionsListener() {
         binding.userSubscriptionsContainer.setOnClickListener {
             viewModel.userSubscriptionsClicked()
-        }    }
+        }
+    }
 
     private fun setupTryAgainButtonListener() {
         binding.genericError.btnTryAgain.setOnClickListener {
@@ -75,15 +81,16 @@ class UserProfileFragment : Fragment() {
     private fun setupActionListener() {
         onAction(viewModel) { action ->
             when (action) {
-                UserProfileAction.NavigateToUserSubscriptions -> Log.d(
-                    "Challenge",
-                    "Navigate to userSubscriptions"
-                )
-                UserProfileAction.Logout -> {
-                    navigateToLogin()
-                }
+                UserProfileAction.NavigateToUserSubscriptions -> navigateToUserSubscriptions()
+                UserProfileAction.Logout -> navigateToLogin()
             }
         }
+    }
+
+    private fun navigateToUserSubscriptions() {
+        val direction = UserProfileFragmentDirections.toUserSubscriptionsFragment()
+        binding.root.findNavController().navigate(direction)
+        Log.d("Challenge", "navigateToUserSubscriptions")
     }
 
     private fun navigateToLogin() {

@@ -22,6 +22,10 @@ class HomeActivity : AppCompatActivity() {
         setupNavController()
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
     private fun setupNavController() {
         setSupportActionBar(binding.homeToolbar)
         val homeContainerView = supportFragmentManager

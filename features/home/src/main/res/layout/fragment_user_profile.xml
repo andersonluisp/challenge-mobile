@@ -19,7 +19,7 @@
 
             <include
                 android:id="@+id/skeletonLayout"
-                layout="@layout/fragment_user_profile_shimmer"
+                layout="@layout/fragment_user_profile_skeleton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,7 @@
                 android:id="@+id/profileIv"
                 android:layout_width="@dimen/profile_avatar"
                 android:layout_height="@dimen/profile_avatar"
-                android:layout_marginTop="@dimen/margin_between_avatar_to_toolbar"
+                android:layout_marginTop="@dimen/margin_between_first_view_to_toolbar"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
@@ -153,7 +153,6 @@
                     android:id="@+id/mySubscriptionsTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_between_my_subscriptions_to_order_status"
                     android:text="@string/my_subscriptions"
                     android:textColor="@color/grayText"
                     android:textSize="@dimen/user_profile_options_text_size"

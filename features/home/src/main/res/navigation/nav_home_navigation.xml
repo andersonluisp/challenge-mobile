@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home_navigation"
+    app:startDestination="@id/userProfileFragment">
+
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="br.com.andersonluisdev.home.presentation.fragment.myprofile.fragment.UserProfileFragment"
+        android:label="Meu Perfil"
+        tools:layout="@layout/fragment_user_profile">
+        <argument
+            android:name="userProfile"
+            app:nullable="true"
+            android:defaultValue="@null"
+            app:argType="br.com.andersonluisdev.home.presentation.dataui.MyProfileDataUi"
+            />
+    </fragment>
+
+</navigation>

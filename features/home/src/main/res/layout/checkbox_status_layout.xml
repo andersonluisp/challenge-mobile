@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/aboveLine"
+        android:layout_width="1dp"
+        android:layout_height="10dp"
+        android:background="@color/gray_disabled"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/statusCheckBoxIv"
+        app:layout_constraintEnd_toEndOf="@id/statusCheckBoxIv"/>
+
+    <View
+        android:id="@+id/belowLine"
+        android:layout_width="1dp"
+        android:layout_height="10dp"
+        android:background="@color/gray_disabled"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/statusCheckBoxIv"
+        app:layout_constraintEnd_toEndOf="@id/statusCheckBoxIv"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/statusCheckBoxIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_unchecked"
+        app:layout_constraintTop_toBottomOf="@id/aboveLine"
+        app:layout_constraintBottom_toTopOf="@id/belowLine"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/statusDescriptionTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/grayText"
+        android:textSize="15sp"
+        android:lines="1"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="@id/statusCheckBoxIv"
+        app:layout_constraintStart_toEndOf="@id/statusCheckBoxIv"
+        app:layout_constraintTop_toTopOf="@id/statusCheckBoxIv"
+        android:text="Aprovação Pendente" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

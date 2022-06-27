@@ -7,6 +7,6 @@ import kotlinx.coroutines.flow.Flow
 class GetUserSubscriptionsUseCase(
     private val userSubscriptionsRepository: UserSubscriptionsRepository
 ) {
-    suspend operator fun invoke(): Flow<List<Order?>?> =
+    suspend operator fun invoke(): Flow<List<Order>?> =
         userSubscriptionsRepository.getUserSubscriptions()
 }

@@ -16,7 +16,7 @@ class UserSubscriptionsRepositoryImpl(
     private val apiService: ApiService,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : UserSubscriptionsRepository {
-    override suspend fun getUserSubscriptions(): Flow<List<Order?>?> =
+    override suspend fun getUserSubscriptions(): Flow<List<Order>?> =
         withContext(dispatcher) {
             flow {
                 apiService.getUserOrders(ApiData.token).apply {
@@ -26,9 +26,11 @@ class UserSubscriptionsRepositoryImpl(
                         }
                         emit(listOrders)
                     } else {
-                        val listErrorResponse =
-                            listOf(errorBody()?.toErrorResponseMapper()?.toOrderMapper())
-                        emit(listErrorResponse)
+                        errorBody()?.toErrorResponseMapper()?.let {
+                            val listErrorResponse =
+                                listOf(it.toOrderMapper())
+                            emit(listErrorResponse)
+                        }
                     }
                 }
             }

@@ -8,5 +8,8 @@ data class OrderDetailsResponse(
     @SerializedName("summary_values")
     val summaryValues: SummaryValuesResponse?,
     @SerializedName("vehicle_details")
-    val vehicleDetails: VehicleDetailsResponse?
+    val vehicleDetails: VehicleDetailsResponse?,
+    @SerializedName("error_message")
+    val errorMessage: String?,
+    val success: Boolean?
 )

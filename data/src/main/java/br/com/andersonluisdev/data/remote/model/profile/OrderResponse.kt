@@ -7,5 +7,8 @@ data class OrderResponse(
     val orderId: Int?,
     val statuses: List<StatusResponse>?,
     @SerializedName("submodel_name")
-    val subModelName: String?
+    val subModelName: String?,
+    @SerializedName("error_message")
+    val errorMessage: String?,
+    val success: Boolean?
 )

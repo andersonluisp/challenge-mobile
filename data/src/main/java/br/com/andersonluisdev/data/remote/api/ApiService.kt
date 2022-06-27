@@ -3,7 +3,7 @@ package br.com.andersonluisdev.data.remote.api
 import br.com.andersonluisdev.data.remote.model.login.LoginResponse
 import br.com.andersonluisdev.data.remote.model.orderdetails.OrderDetailsResponse
 import br.com.andersonluisdev.data.remote.model.profile.OrderResponse
-import br.com.andersonluisdev.data.remote.model.profile.ProfileResponse
+import br.com.andersonluisdev.data.remote.model.profile.UserProfileResponse
 import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -23,16 +23,16 @@ interface ApiService {
     @GET("user/profile")
     suspend fun getUserProfile(
         @Query("token") token: String
-    ): ProfileResponse
+    ): Response<UserProfileResponse>
 
     @GET("user/profile/orders")
     suspend fun getUserOrders(
         @Query("token") token: String
-    ): List<OrderResponse>
+    ): Response<List<OrderResponse>>
 
     @GET("ser/profile/order_details")
     suspend fun getOrderDetails(
         @Query("token") token: String,
         @Query("orderId") orderId: Int
-    ): OrderDetailsResponse
+    ): Response<OrderDetailsResponse>
 }

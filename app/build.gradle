@@ -42,6 +42,7 @@ dependencies {
     implementation project(modules.login)
     implementation project(modules.data)
     implementation project(modules.domain)
+    implementation project(modules.home)
 
     implementation dependencies.koin
     implementation dependencies.koinCore

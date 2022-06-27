@@ -1,14 +1,15 @@
 package br.com.andersonluisdev.login.presentation.activity
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import br.com.andersonluisdev.common.baseviewmodel.extension.onAction
 import br.com.andersonluisdev.common.baseviewmodel.extension.onStateChange
 import br.com.andersonluisdev.common.extension.showToast
+import br.com.andersonluisdev.home.presentation.activity.HomeActivity
 import br.com.andersonluisdev.login.databinding.ActivityLoginBinding
 import br.com.andersonluisdev.login.presentation.activity.action.LoginAction
 import br.com.andersonluisdev.login.presentation.activity.state.LoginViewState
@@ -33,8 +34,6 @@ class LoginActivity : AppCompatActivity() {
 
         binding.emailEditText.setText("jessica@challenge.com")
         binding.passwordEditText.setText("pass123")
-
-
 
         setupStatusBar()
     }
@@ -61,11 +60,16 @@ class LoginActivity : AppCompatActivity() {
         onAction(viewModel) { action ->
             when(action) {
                 is LoginAction.ButtonSignInClicked -> signIn()
-                is LoginAction.ButtonTryAgainClicked -> signIn()
-                is LoginAction.NavigateToHome -> Log.d("Challenge", "Navigate to Home")
+                is LoginAction.NavigateToHome -> navigateToHome()
                 is LoginAction.ShowInvalidLoginToast -> showToast(action.errorMessage)
             }
         }
+    }
+
+    private fun navigateToHome() {
+        val intent = Intent(applicationContext, HomeActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
     }
 
     private fun signIn() {

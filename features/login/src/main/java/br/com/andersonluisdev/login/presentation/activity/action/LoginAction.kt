@@ -7,5 +7,4 @@ sealed class LoginAction : ViewAction {
     data class NavigateToHome(val login: LoginDataUi) : LoginAction()
     data class ShowInvalidLoginToast(val errorMessage: String) : LoginAction()
     object ButtonSignInClicked : LoginAction()
-    object ButtonTryAgainClicked : LoginAction()
 }

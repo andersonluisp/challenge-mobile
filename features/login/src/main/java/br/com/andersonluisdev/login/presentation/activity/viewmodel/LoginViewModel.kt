@@ -19,7 +19,7 @@ class LoginViewModel(
         viewModelScope.launch {
             try {
                 signInUseCase(email, password).collect(::handleLoginState)
-            }catch (t: Throwable) {
+            } catch (t: Throwable) {
                 handleLoginGenericError()
             }
         }
@@ -28,12 +28,6 @@ class LoginViewModel(
     private fun handleLoginButtonLoadingState() {
         setState { state ->
             state.setButtonLoginLoadingState(showLoading = true)
-        }
-    }
-
-    private fun handleTryAgainButtonLoadingState() {
-        setState { state ->
-            state.setButtonTryAgainLoadingState(showLoading = true)
         }
     }
 
@@ -70,7 +64,8 @@ class LoginViewModel(
     }
 
     fun buttonTryAgainClicked() {
-        sendAction { LoginAction.ButtonTryAgainClicked }
-        handleTryAgainButtonLoadingState()
+        setState {
+            initialState
+        }
     }
 }

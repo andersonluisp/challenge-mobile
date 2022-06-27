@@ -7,6 +7,7 @@ ext {
     kotlinVersion = '1.6.0'
     gradleVersion = '7.0.3'
     lifeCycleVersion = '2.4.0'
+    navVersion = '2.4.2'
 
     ktxVersion = '1.7.0'
     appCompatVersion = '1.4.0'
@@ -19,6 +20,8 @@ ext {
     koinVersion = '3.2.0'
     retrofitVersion = '2.9.0'
     roomVersion = '2.3.0'
+
+    skeletonVersion = '4.0.0'
 
     //Test
     junitVersion = '4.13.2'
@@ -38,6 +41,11 @@ ext {
             lifecycle: "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion",
             material: "com.google.android.material:material:$materialVersion",
             constraintLayout: "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+            navigationFragment: "androidx.navigation:navigation-fragment-ktx:$navVersion",
+            navigationUi: "androidx.navigation:navigation-fragment-ktx:$navVersion",
+            navigationUiKtx: "androidx.navigation:navigation-ui-ktx:$navVersion",
+            navigationFeatures: "androidx.navigation:navigation-dynamic-features-fragment:$navVersion",
+            skeleton: "com.faltenreich:skeletonlayout:$skeletonVersion",
 
             //Koin
             koin: "io.insert-koin:koin-android:$koinVersion",
@@ -80,6 +88,7 @@ ext {
             data: ":data",
             common: ":common",
             uicomponents: ":uicomponents",
-            domain: ":domain"
+            domain: ":domain",
+            home: ":features:home"
     ]
 }

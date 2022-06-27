@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="40dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/subscriptionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#1110 Volkswagen Golf 2020"
+        android:textColor="@color/grayText"
+        android:textSize="@dimen/user_profile_options_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logoutArrowIv"
+        android:layout_width="@dimen/ic_arrow_size"
+        android:layout_height="@dimen/ic_arrow_size"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@id/subscriptionTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/subscriptionTitle"
+        app:srcCompat="@drawable/ic_arrow_right_disabled" />
+
+    <View
+        android:id="@+id/horizontalLineSubscription"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_divisor_thickness"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:background="@color/primary_200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subscriptionTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

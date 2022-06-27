@@ -1,4 +1,4 @@
-package br.com.andersonluisdev.home.presentation.fragment.myprofile.dataui
+package br.com.andersonluisdev.home.presentation.fragment.userprofile.dataui
 
 data class UserProfileDataUi(
     val avatarUrl: String?,

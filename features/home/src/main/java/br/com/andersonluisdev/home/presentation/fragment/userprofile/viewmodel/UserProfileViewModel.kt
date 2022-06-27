@@ -1,14 +1,13 @@
-package br.com.andersonluisdev.home.presentation.fragment.myprofile.viewmodel
+package br.com.andersonluisdev.home.presentation.fragment.userprofile.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.viewModelScope
 import br.com.andersonluisdev.common.baseviewmodel.viewmodel.BaseViewModel
 import br.com.andersonluisdev.domain.model.profile.UserProfile
 import br.com.andersonluisdev.domain.usecase.userprofile.GetUserProfileUseCase
-import br.com.andersonluisdev.home.presentation.fragment.myprofile.action.UserProfileAction
-import br.com.andersonluisdev.home.presentation.fragment.myprofile.mapper.toUserProfileDataUiMapper
-import br.com.andersonluisdev.home.presentation.fragment.myprofile.state.UserProfileViewState
-import kotlinx.coroutines.delay
+import br.com.andersonluisdev.home.presentation.fragment.userprofile.action.UserProfileAction
+import br.com.andersonluisdev.home.presentation.fragment.userprofile.mapper.toUserProfileDataUiMapper
+import br.com.andersonluisdev.home.presentation.fragment.userprofile.state.UserProfileViewState
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 

@@ -10,7 +10,7 @@
         android:id="@+id/userProfileContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".presentation.fragment.myprofile.fragment.UserProfileFragment">
+        tools:context=".presentation.fragment.userprofile.fragment.UserProfileFragment">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/profileIvSkeleton"

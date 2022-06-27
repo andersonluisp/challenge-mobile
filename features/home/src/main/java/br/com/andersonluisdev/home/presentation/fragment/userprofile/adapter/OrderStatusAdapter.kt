@@ -1,4 +1,4 @@
-package br.com.andersonluisdev.home.presentation.fragment.myprofile.adapter
+package br.com.andersonluisdev.home.presentation.fragment.userprofile.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.andersonluisdev.home.R
 import br.com.andersonluisdev.home.databinding.CheckboxStatusLayoutBinding
 import br.com.andersonluisdev.home.databinding.StatusItemLayoutBinding
-import br.com.andersonluisdev.home.presentation.fragment.myprofile.dataui.OrderDataUi
+import br.com.andersonluisdev.home.presentation.fragment.userprofile.dataui.OrderDataUi
 
 class OrderStatusAdapter :
     ListAdapter<OrderDataUi, OrderStatusAdapter.OrderStatusViewHolder>(OrderStatusDiffUtil()) {

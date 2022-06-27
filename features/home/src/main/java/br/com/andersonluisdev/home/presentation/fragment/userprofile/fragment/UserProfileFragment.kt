@@ -1,4 +1,4 @@
-package br.com.andersonluisdev.home.presentation.fragment.myprofile.fragment
+package br.com.andersonluisdev.home.presentation.fragment.userprofile.fragment
 
 import android.content.Intent
 import android.net.Uri
@@ -17,11 +17,11 @@ import br.com.andersonluisdev.common.extension.enable
 import br.com.andersonluisdev.common.extension.setUrlImage
 import br.com.andersonluisdev.home.R
 import br.com.andersonluisdev.home.databinding.FragmentUserProfileBinding
-import br.com.andersonluisdev.home.presentation.fragment.myprofile.action.UserProfileAction
-import br.com.andersonluisdev.home.presentation.fragment.myprofile.adapter.OrderStatusAdapter
-import br.com.andersonluisdev.home.presentation.fragment.myprofile.state.UserProfileViewState
-import br.com.andersonluisdev.home.presentation.fragment.myprofile.util.SnapPagerScrollListener
-import br.com.andersonluisdev.home.presentation.fragment.myprofile.viewmodel.UserProfileViewModel
+import br.com.andersonluisdev.home.presentation.fragment.userprofile.action.UserProfileAction
+import br.com.andersonluisdev.home.presentation.fragment.userprofile.adapter.OrderStatusAdapter
+import br.com.andersonluisdev.home.presentation.fragment.userprofile.state.UserProfileViewState
+import br.com.andersonluisdev.home.presentation.fragment.userprofile.util.SnapPagerScrollListener
+import br.com.andersonluisdev.home.presentation.fragment.userprofile.viewmodel.UserProfileViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 private const val SKELETON_RADIUS = 100f

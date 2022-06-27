@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/userProfileFragment"
-        android:name="br.com.andersonluisdev.home.presentation.fragment.myprofile.fragment.UserProfileFragment"
+        android:name="br.com.andersonluisdev.home.presentation.fragment.userprofile.fragment.UserProfileFragment"
         android:label="Meu Perfil"
         tools:layout="@layout/fragment_user_profile">
         <argument

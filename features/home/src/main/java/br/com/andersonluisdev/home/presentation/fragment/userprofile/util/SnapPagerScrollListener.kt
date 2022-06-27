@@ -1,4 +1,4 @@
-package br.com.andersonluisdev.home.presentation.fragment.myprofile.util
+package br.com.andersonluisdev.home.presentation.fragment.userprofile.util
 
 import androidx.annotation.IntDef
 import androidx.recyclerview.widget.PagerSnapHelper

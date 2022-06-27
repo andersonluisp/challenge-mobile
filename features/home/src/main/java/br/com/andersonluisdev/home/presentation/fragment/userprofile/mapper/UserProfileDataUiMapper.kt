@@ -1,7 +1,7 @@
-package br.com.andersonluisdev.home.presentation.fragment.myprofile.mapper
+package br.com.andersonluisdev.home.presentation.fragment.userprofile.mapper
 
 import br.com.andersonluisdev.domain.model.profile.UserProfile
-import br.com.andersonluisdev.home.presentation.fragment.myprofile.dataui.UserProfileDataUi
+import br.com.andersonluisdev.home.presentation.fragment.userprofile.dataui.UserProfileDataUi
 
 fun UserProfile.toUserProfileDataUiMapper() = UserProfileDataUi(
     avatarUrl = avatarUrl,

@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/screen_margin"
             android:paddingHorizontal="@dimen/screen_margin"
-            tools:context=".presentation.fragment.myprofile.fragment.UserProfileFragment">
+            tools:context=".presentation.fragment.userprofile.fragment.UserProfileFragment">
 
             <include
                 android:id="@+id/skeletonLayout"

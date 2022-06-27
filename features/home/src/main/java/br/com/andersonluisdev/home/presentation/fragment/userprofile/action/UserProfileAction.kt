@@ -1,4 +1,4 @@
-package br.com.andersonluisdev.home.presentation.fragment.myprofile.action
+package br.com.andersonluisdev.home.presentation.fragment.userprofile.action
 
 import br.com.andersonluisdev.common.baseviewmodel.action.ViewAction
 

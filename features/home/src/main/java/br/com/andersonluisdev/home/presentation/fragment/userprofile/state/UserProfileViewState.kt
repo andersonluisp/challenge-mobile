@@ -1,7 +1,7 @@
-package br.com.andersonluisdev.home.presentation.fragment.myprofile.state
+package br.com.andersonluisdev.home.presentation.fragment.userprofile.state
 
 import br.com.andersonluisdev.common.baseviewmodel.state.ViewState
-import br.com.andersonluisdev.home.presentation.fragment.myprofile.dataui.UserProfileDataUi
+import br.com.andersonluisdev.home.presentation.fragment.userprofile.dataui.UserProfileDataUi
 
 data class UserProfileViewState(
     val isLoading: Boolean = false,

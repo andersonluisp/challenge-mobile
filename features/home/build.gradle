@@ -29,6 +29,10 @@ android {
     kotlinOptions {
         jvmTarget = globalConfiguration["jvmTarget"]
     }
+
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -52,6 +56,11 @@ dependencies {
     implementation dependencies.lifecycle
     implementation dependencies.glide
     implementation dependencies.glideCompiler
+    implementation dependencies.navigationFragment
+    implementation dependencies.navigationUi
+    implementation dependencies.navigationUiKtx
+    implementation dependencies.navigationFeatures
+    implementation dependencies.skeleton
     testImplementation testDependencies.junit
     androidTestImplementation testDependencies.extJunit
     androidTestImplementation testDependencies.espresso

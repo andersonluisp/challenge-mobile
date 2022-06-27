@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs'
 }
 
 android {
@@ -57,7 +58,6 @@ dependencies {
     implementation dependencies.glide
     implementation dependencies.glideCompiler
     implementation dependencies.navigationFragment
-    implementation dependencies.navigationUi
     implementation dependencies.navigationUiKtx
     implementation dependencies.navigationFeatures
     implementation dependencies.skeleton

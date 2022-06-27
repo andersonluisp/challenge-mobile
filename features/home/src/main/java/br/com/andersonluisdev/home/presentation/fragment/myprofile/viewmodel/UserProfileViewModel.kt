@@ -8,6 +8,7 @@ import br.com.andersonluisdev.domain.usecase.userprofile.GetUserProfileUseCase
 import br.com.andersonluisdev.home.presentation.fragment.myprofile.action.UserProfileAction
 import br.com.andersonluisdev.home.presentation.fragment.myprofile.mapper.toUserProfileDataUiMapper
 import br.com.andersonluisdev.home.presentation.fragment.myprofile.state.UserProfileViewState
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -21,7 +22,7 @@ class UserProfileViewModel(
         getUserProfile()
     }
 
-    fun getUserProfile() {
+    private fun getUserProfile() {
         handleLoadingState()
         viewModelScope.launch {
             try {
@@ -53,5 +54,18 @@ class UserProfileViewModel(
         setState { state ->
             state.setGenericErrorState()
         }
+    }
+
+    fun logout() {
+        sendAction {
+            UserProfileAction.Logout
+        }
+    }
+
+    fun tryAgainClicked() {
+        setState {
+            initialState
+        }
+        getUserProfile()
     }
 }

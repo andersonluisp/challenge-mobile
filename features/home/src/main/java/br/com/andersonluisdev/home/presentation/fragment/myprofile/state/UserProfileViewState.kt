@@ -30,11 +30,4 @@ data class UserProfileViewState(
         profileData = null,
         isError = true
     )
-
-    fun setInitialState() = this.copy(
-        isLoading = false,
-        isSuccess = false,
-        profileData = null,
-        isError = false
-    )
 }

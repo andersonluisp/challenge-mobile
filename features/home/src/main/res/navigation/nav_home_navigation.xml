@@ -7,15 +7,21 @@
 
     <fragment
         android:id="@+id/userProfileFragment"
-        android:name="br.com.andersonluisdev.home.presentation.fragment.myprofile.fragment.UserProfileFragment"
+        android:name="br.com.andersonluisdev.home.presentation.fragment.userprofile.fragment.UserProfileFragment"
         android:label="Meu Perfil"
         tools:layout="@layout/fragment_user_profile">
-        <argument
-            android:name="userProfile"
-            app:nullable="true"
-            android:defaultValue="@null"
-            app:argType="br.com.andersonluisdev.home.presentation.dataui.MyProfileDataUi"
-            />
+        <action
+            android:id="@+id/to_userSubscriptionsFragment"
+            app:destination="@id/userSubscriptionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userSubscriptionsFragment"
+        android:name="br.com.andersonluisdev.home.presentation.fragment.usersubscriptions.fragment.UserSubscriptionsFragment"
+        android:label="Minhas Assinaturas"
+        tools:layout="@layout/fragment_user_subscriptions" >
+        <action
+            android:id="@+id/to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
     </fragment>
 
 </navigation>

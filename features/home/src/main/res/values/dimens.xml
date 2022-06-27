@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="profile_avatar">70dp</dimen>
-    <dimen name="margin_between_avatar_to_toolbar">70dp</dimen>
+    <dimen name="margin_between_first_view_to_toolbar">30dp</dimen>
     <dimen name="margin_10dp">10dp</dimen>
     <dimen name="full_name_text_size">20sp</dimen>
     <dimen name="city_state_text_size">14sp</dimen>

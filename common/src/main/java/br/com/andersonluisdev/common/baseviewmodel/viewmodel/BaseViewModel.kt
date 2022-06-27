@@ -14,7 +14,7 @@ abstract class BaseViewModel<State : ViewState, Action : ViewAction>(
     val state: LiveData<State>
         get() = _state
 
-    private val _action: MutableLiveData<Action> = MutableLiveData()
+    private val _action: SingleEventLiveData<Action> = SingleEventLiveData()
     val action: LiveData<Action>
         get() = _action
 

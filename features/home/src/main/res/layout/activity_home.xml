@@ -6,24 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".presentation.activity.HomeActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        style="@style/AppBarStyle"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/homeToolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:elevation="0dp"
+        android:layout_height="?attr/actionBarSize"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/homeToolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:titleCentered="true"
-            app:titleTextAppearance="@style/ToolbarTextAppearence" />
-
-    </com.google.android.material.appbar.AppBarLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleCentered="true"
+        app:titleTextAppearance="@style/ToolbarTextAppearence" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/homeContainer"
@@ -34,7 +24,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homeToolbar"
         app:navGraph="@navigation/nav_home_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

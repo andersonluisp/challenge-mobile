@@ -1,16 +1,12 @@
 package br.com.andersonluisdev.home.presentation.activity
 
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import br.com.andersonluisdev.home.R
 import br.com.andersonluisdev.home.databinding.ActivityHomeBinding
-import br.com.andersonluisdev.home.presentation.dataui.MyProfileDataUi
 
 class HomeActivity : AppCompatActivity() {
 
@@ -23,11 +19,11 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
-        val user = intent?.getParcelableExtra<MyProfileDataUi>("USER_PROFILE")
-        Log.d("Challenge", user.toString())
-
         setupNavController()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
     private fun setupNavController() {

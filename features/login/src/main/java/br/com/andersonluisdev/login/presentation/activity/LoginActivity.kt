@@ -60,7 +60,6 @@ class LoginActivity : AppCompatActivity() {
         onAction(viewModel) { action ->
             when(action) {
                 is LoginAction.ButtonSignInClicked -> signIn()
-                is LoginAction.ButtonTryAgainClicked -> signIn()
                 is LoginAction.NavigateToHome -> navigateToHome()
                 is LoginAction.ShowInvalidLoginToast -> showToast(action.errorMessage)
             }
@@ -69,6 +68,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun navigateToHome() {
         val intent = Intent(applicationContext, HomeActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
     }
 

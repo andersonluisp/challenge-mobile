@@ -10,12 +10,6 @@
         android:name="br.com.andersonluisdev.home.presentation.fragment.userprofile.fragment.UserProfileFragment"
         android:label="Meu Perfil"
         tools:layout="@layout/fragment_user_profile">
-        <argument
-            android:name="userProfile"
-            app:nullable="true"
-            android:defaultValue="@null"
-            app:argType="br.com.andersonluisdev.home.presentation.dataui.MyProfileDataUi"
-            />
     </fragment>
 
 </navigation>

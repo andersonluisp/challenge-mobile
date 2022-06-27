@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <ScrollView
         android:id="@+id/userProfileContainer"
         android:layout_width="match_parent"
@@ -138,35 +139,47 @@
                 tools:itemCount="1"
                 tools:listitem="@layout/status_item_layout_skeleton" />
 
-            <TextView
-                android:id="@+id/mySubscriptionsTv"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/userSubscriptionsContainer"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_between_my_subscriptions_to_order_status"
-                android:text="@string/my_subscriptions"
                 android:textColor="@color/grayText"
                 android:textSize="@dimen/user_profile_options_text_size"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/statusRv" />
+                app:layout_constraintTop_toBottomOf="@id/statusRv">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/mySubscriptionsArrowIv"
-                android:layout_width="@dimen/ic_arrow_size"
-                android:layout_height="@dimen/ic_arrow_size"
-                android:scaleType="centerInside"
-                app:layout_constraintBottom_toBottomOf="@id/mySubscriptionsTv"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/mySubscriptionsTv"
-                app:srcCompat="@drawable/ic_arrow_right_disabled" />
+                <TextView
+                    android:id="@+id/mySubscriptionsTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_between_my_subscriptions_to_order_status"
+                    android:text="@string/my_subscriptions"
+                    android:textColor="@color/grayText"
+                    android:textSize="@dimen/user_profile_options_text_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <View
-                android:id="@+id/horizontalLineMySubscriptions"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/line_divisor_thickness"
-                android:layout_marginTop="@dimen/margin_10dp"
-                android:background="@color/primary_200"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/mySubscriptionsTv" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/mySubscriptionsArrowIv"
+                    android:layout_width="@dimen/ic_arrow_size"
+                    android:layout_height="@dimen/ic_arrow_size"
+                    android:scaleType="centerInside"
+                    app:layout_constraintBottom_toBottomOf="@id/mySubscriptionsTv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/mySubscriptionsTv"
+                    app:srcCompat="@drawable/ic_arrow_right_disabled" />
+
+                <View
+                    android:id="@+id/horizontalLineMySubscriptions"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_divisor_thickness"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:background="@color/primary_200"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mySubscriptionsTv" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/logoutContainer"
@@ -174,7 +187,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_between_logout_to_my_subscriptions"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/horizontalLineMySubscriptions">
+                app:layout_constraintTop_toBottomOf="@id/userSubscriptionsContainer">
 
                 <TextView
                     android:id="@+id/logoutTv"
@@ -212,7 +225,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:visibility="invisible"
-                app:constraint_referenced_ids="profileIv, fullNameTv, cityStateTv, statusLabelTv, horizontalLineStatus, orderTitleContainerSkeleton, statusRv, mySubscriptionsTv, mySubscriptionsArrowIv, horizontalLineMySubscriptions, logoutContainer"
+                app:constraint_referenced_ids="profileIv, fullNameTv, cityStateTv, statusLabelTv, horizontalLineStatus, orderTitleContainerSkeleton, statusRv, userSubscriptionsContainer, logoutContainer"
                 tools:visibility="visible" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
@@ -222,9 +235,8 @@
         layout="@layout/generic_error_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </FrameLayout>

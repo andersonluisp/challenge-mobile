@@ -67,4 +67,10 @@ class UserProfileViewModel(
         }
         getUserProfile()
     }
+
+    fun userSubscriptionsClicked() {
+        sendAction {
+            UserProfileAction.NavigateToUserSubscriptions
+        }
+    }
 }

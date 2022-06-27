@@ -51,8 +51,14 @@ class UserProfileFragment : Fragment() {
         stateChangeListener()
         setupActionListener()
         setupLogoutListener()
+        setupUserSubscriptionsListener()
         setupLoadingSkeleton()
     }
+
+    private fun setupUserSubscriptionsListener() {
+        binding.userSubscriptionsContainer.setOnClickListener {
+            viewModel.userSubscriptionsClicked()
+        }    }
 
     private fun setupTryAgainButtonListener() {
         binding.genericError.btnTryAgain.setOnClickListener {

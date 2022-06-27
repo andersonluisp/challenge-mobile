@@ -7,7 +7,7 @@ import br.com.andersonluisdev.common.baseviewmodel.action.ViewAction
 import br.com.andersonluisdev.common.baseviewmodel.state.ViewState
 
 abstract class BaseViewModel<State : ViewState, Action : ViewAction>(
-    initialState: State
+    val initialState: State
 ) :ViewModel() {
 
     private val _state: MutableLiveData<State> = MutableLiveData(initialState)

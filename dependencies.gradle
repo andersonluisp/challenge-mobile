@@ -21,6 +21,8 @@ ext {
     retrofitVersion = '2.9.0'
     roomVersion = '2.3.0'
 
+    skeletonVersion = '4.0.0'
+
     //Test
     junitVersion = '4.13.2'
     mockkVersion = '1.10.2'
@@ -41,7 +43,9 @@ ext {
             constraintLayout: "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
             navigationFragment: "androidx.navigation:navigation-fragment-ktx:$navVersion",
             navigationUi: "androidx.navigation:navigation-fragment-ktx:$navVersion",
+            navigationUiKtx: "androidx.navigation:navigation-ui-ktx:$navVersion",
             navigationFeatures: "androidx.navigation:navigation-dynamic-features-fragment:$navVersion",
+            skeleton: "com.faltenreich:skeletonlayout:$skeletonVersion",
 
             //Koin
             koin: "io.insert-koin:koin-android:$koinVersion",

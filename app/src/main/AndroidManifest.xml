@@ -16,11 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidChallenge"
         tools:targetApi="31">
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
     </application>
 
 </manifest>

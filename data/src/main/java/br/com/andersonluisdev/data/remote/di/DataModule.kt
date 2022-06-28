@@ -10,6 +10,7 @@ import br.com.andersonluisdev.domain.repository.OrderDetailsRepository
 import br.com.andersonluisdev.domain.repository.UserProfileRepository
 import br.com.andersonluisdev.domain.repository.UserSubscriptionsRepository
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -66,6 +67,7 @@ inline fun <reified T> createWebService(okHttpClient: OkHttpClient): T {
 
 fun providesOkHttpClient(): OkHttpClient {
     return OkHttpClient.Builder()
+        .addInterceptor(HttpLoggingInterceptor().apply { setLevel(HttpLoggingInterceptor.Level.BODY) })
         .connectTimeout(TIMEOUT_CONNECTION, TimeUnit.SECONDS)
         .readTimeout(TIMEOUT_CONNECTION, TimeUnit.SECONDS)
         .writeTimeout(TIMEOUT_CONNECTION, TimeUnit.SECONDS)

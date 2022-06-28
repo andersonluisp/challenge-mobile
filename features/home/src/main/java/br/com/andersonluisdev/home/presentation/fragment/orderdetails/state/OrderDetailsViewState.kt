@@ -7,7 +7,8 @@ data class OrderDetailsViewState(
     val isLoading: Boolean = false,
     val isSuccess: Boolean = false,
     val orderDetails: OrderDetailsDataUi? = null,
-    val isError: Boolean = false
+    val isError: Boolean = false,
+    val yearBrand: String = "",
 ) : ViewState {
     fun setLoadingState() = this.copy(
         isLoading = true,
@@ -29,4 +30,10 @@ data class OrderDetailsViewState(
         orderDetails = null,
         isError = true
     )
+
+    fun OrderDetailsViewState.getFormatYearBrand(): String {
+        return with(orderDetails?.vehicleDetails) {
+            this?.vehicleYear.toString().plus(" ").plus(this?.vehicleBrand)
+        }
+    }
 }

@@ -52,9 +52,6 @@ class OrderDetailsViewModel(
     }
 
     fun tryAgainClicked(orderId: Int) {
-        setState {
-            initialState
-        }
         getOrderDetails(orderId)
     }
 }

@@ -30,9 +30,9 @@ interface ApiService {
         @Query("token") token: String
     ): Response<List<OrderResponse>>
 
-    @GET("ser/profile/order_details")
+    @GET("user/profile/order_details")
     suspend fun getOrderDetails(
         @Query("token") token: String,
-        @Query("orderId") orderId: Int
+        @Query("order_id") orderId: Int
     ): Response<OrderDetailsResponse>
 }

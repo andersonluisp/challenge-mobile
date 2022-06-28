@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayBackground">
+
+    <include
+        android:id="@+id/skeletonLayout"
+        layout="@layout/fragment_order_details_skeleton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="invisible" />
+
+    <ScrollView
+        android:id="@+id/orderDetailsScrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/screen_margin"
+            tools:context=".presentation.fragment.orderdetails.fragment.OrderDetailsFragment">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/carImageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/image_slider_height"
+                android:layout_marginTop="@dimen/margin_between_viewpager_toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/dotsTabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabBackground="@drawable/tab_selector"
+                app:tabGravity="center"
+                app:tabMode="fixed"
+                android:background="@color/grayBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carImageSlider"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/carInfoLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingHorizontal="@dimen/screen_margin"
+                android:paddingBottom="@dimen/car_info_passing_bottom"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dotsTabLayout">
+
+                <TextView
+                    android:id="@+id/yearBrandTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_top_year_brand"
+                    android:layout_marginEnd="@dimen/margin_end_year_brand"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="2020 Volkswagen"
+                    android:textColor="@color/grayText"
+                    android:textSize="@dimen/year_brand_text_size"
+                    app:layout_constraintEnd_toStartOf="@id/monthlyPaymentLabel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/monthlyPaymentLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/monthly_label"
+                    android:textColor="@color/grayText"
+                    android:textSize="@dimen/monthly_label_text_size"
+                    app:layout_constraintBottom_toBottomOf="@id/yearBrandTv"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/modelTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/model_margin_end"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/sfuidisplay_medium"
+                    android:maxLines="1"
+                    tools:text="Golf"
+                    android:textColor="@color/primary_700"
+                    android:textSize="@dimen/model_and_monthly_value_text_size"
+                    app:layout_constraintEnd_toStartOf="@id/priceTv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/yearBrandTv" />
+
+                <TextView
+                    android:id="@+id/priceTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfuidisplay_medium"
+                    tools:text="R$1100"
+                    android:textColor="@color/primary_700"
+                    android:textSize="@dimen/model_and_monthly_value_text_size"
+                    app:layout_constraintBottom_toBottomOf="@id/modelTv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/modelTv" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/carFeaturesLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/car_features_card_height"
+                android:background="@color/white"
+                android:paddingHorizontal="@dimen/screen_margin"
+                android:paddingBottom="@dimen/car_features_margin_bottom_card"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carInfoLayout">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/verticalCarFeatureGuide50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/horizontalCarFeatureGuide50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <View
+                    android:layout_width="@dimen/line_divisor_thickness"
+                    android:layout_height="0dp"
+                    android:background="@color/gray_border"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/verticalCarFeatureGuide50"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/line_divisor_thickness"
+                    android:background="@color/gray_border"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/horizontalCarFeatureGuide50" />
+
+                <TextView
+                    android:id="@+id/carFuelTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    tools:text="Flex"
+                    android:textColor="@color/grayText"
+                    android:textSize="@dimen/features_text_size"
+                    app:layout_constraintBottom_toBottomOf="@id/horizontalCarFeatureGuide50"
+                    app:layout_constraintEnd_toEndOf="@id/verticalCarFeatureGuide50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/carDoorsTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    tools:text="4 Portas"
+                    android:textColor="@color/grayText"
+                    android:textSize="@dimen/features_text_size"
+                    app:layout_constraintBottom_toBottomOf="@id/horizontalCarFeatureGuide50"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/verticalCarFeatureGuide50"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/carEngineTypeTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    tools:text="Manual"
+                    android:textColor="@color/grayText"
+                    android:textSize="@dimen/features_text_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/verticalCarFeatureGuide50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/horizontalCarFeatureGuide50" />
+
+                <TextView
+                    android:id="@+id/carEngineTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    tools:text="Motor 1.0"
+                    android:textColor="@color/grayText"
+                    android:textSize="@dimen/features_text_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/verticalCarFeatureGuide50"
+                    app:layout_constraintTop_toTopOf="@id/horizontalCarFeatureGuide50" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/informationLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_subscriptions_and_features"
+                android:paddingHorizontal="@dimen/screen_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carFeaturesLayout">
+
+                <TextView
+                    android:id="@+id/logoutTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/subscription_information"
+                    android:textColor="@color/grayText"
+                    android:textSize="@dimen/user_profile_options_text_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/horizontalLineLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_divisor_thickness"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:background="@color/primary_200"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/logoutTv" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/subscriptionsCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/margin_between_subscription_card_and_label"
+                android:background="@color/white"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/informationLabel"
+                app:strokeColor="@color/gray_border"
+                app:strokeWidth="1dp">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/card_subscription_information_height"
+                    android:paddingVertical="@dimen/card_subscription_information_padding_vertical">
+
+                    <View
+                        android:id="@+id/firstVerticalSeparator"
+                        android:layout_width="@dimen/line_divisor_thickness"
+                        android:layout_height="0dp"
+                        android:background="@color/gray_border"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/secondVerticalSeparator"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/secondVerticalSeparator"
+                        android:layout_width="@dimen/line_divisor_thickness"
+                        android:layout_height="0dp"
+                        android:background="@color/gray_border"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/firstVerticalSeparator"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/monthsValueTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        tools:text="12"
+                        android:textColor="@color/grayText"
+                        android:textSize="@dimen/subscription_information_text_size"
+                        app:layout_constraintBottom_toTopOf="@id/monthsValueLabel"
+                        app:layout_constraintEnd_toEndOf="@id/firstVerticalSeparator"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/monthsValueLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/months"
+                        android:textColor="@color/grayText"
+                        android:textSize="@dimen/subscription_information_label_text_size"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/firstVerticalSeparator"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/monthsValueTv" />
+
+
+                    <TextView
+                        android:id="@+id/planTypeValueTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        tools:text="24"
+                        android:textColor="@color/grayText"
+                        android:textSize="@dimen/subscription_information_text_size"
+                        app:layout_constraintBottom_toTopOf="@id/monthsValueLabel"
+                        app:layout_constraintEnd_toEndOf="@id/secondVerticalSeparator"
+                        app:layout_constraintStart_toStartOf="@id/firstVerticalSeparator"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/planTypeValueLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/months"
+                        android:textColor="@color/grayText"
+                        android:textSize="@dimen/subscription_information_label_text_size"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/secondVerticalSeparator"
+                        app:layout_constraintStart_toStartOf="@id/firstVerticalSeparator"
+                        app:layout_constraintTop_toBottomOf="@id/monthsValueTv" />
+
+                    <TextView
+                        android:id="@+id/additionalFranchiseValueTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        tools:text="R$1,50"
+                        android:textColor="@color/grayText"
+                        android:textSize="@dimen/subscription_information_text_size"
+                        app:layout_constraintBottom_toTopOf="@id/monthsValueLabel"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/secondVerticalSeparator"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/additionalFranchiseValueLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/aditional_franchise"
+                        android:textColor="@color/grayText"
+                        android:textSize="@dimen/subscription_information_label_text_size"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/secondVerticalSeparator"
+                        app:layout_constraintTop_toBottomOf="@id/monthsValueTv" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/valueLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingHorizontal="@dimen/screen_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/subscriptionsCard">
+
+                <TextView
+                    android:id="@+id/valueTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/values"
+                    android:textColor="@color/grayText"
+                    android:textSize="@dimen/user_profile_options_text_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/horizontalLineValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_divisor_thickness"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:background="@color/primary_200"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/valueTv" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/valueCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/margin_between_summary_and_label"
+                android:background="@color/white"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/valueLabel"
+                app:strokeColor="@color/gray_border"
+                app:strokeWidth="@dimen/line_divisor_thickness">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/card_summary_values_height"
+                    android:layout_marginHorizontal="@dimen/card_summary_values_margin_horizontal"
+                    android:paddingVertical="@dimen/card_summary_values_margin_vertical">
+
+                    <TextView
+                        android:id="@+id/monthlyPriceLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        android:text="@string/monthly_rent"
+                        android:textColor="@color/grayText"
+                        android:textSize="@dimen/card_summary_values_text_size"
+                        app:layout_constraintBottom_toTopOf="@id/extrasPriceLabel"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/monthlyPriceValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        tools:text="R$ 1100,00"
+                        android:textColor="@color/grayText"
+                        android:textSize="@dimen/card_summary_values_text_size"
+                        app:layout_constraintBottom_toBottomOf="@id/monthlyPriceLabel"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/monthlyPriceLabel" />
+
+                    <TextView
+                        android:id="@+id/extrasPriceLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        android:text="@string/accesssories"
+                        android:textColor="@color/grayText"
+                        android:textSize="@dimen/card_summary_values_text_size"
+                        app:layout_constraintBottom_toTopOf="@id/totalPriceLabel"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/monthlyPriceLabel"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/extrasPriceValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        tools:text="R$ 0,00"
+                        android:textColor="@color/grayText"
+                        android:textSize="@dimen/card_summary_values_text_size"
+                        app:layout_constraintBottom_toBottomOf="@id/extrasPriceLabel"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/extrasPriceLabel" />
+
+                    <TextView
+                        android:id="@+id/totalPriceLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        android:text="@string/total"
+                        android:textColor="@color/grayText"
+                        android:textSize="@dimen/card_summary_values_text_size"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/extrasPriceLabel"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/totalPriceValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        tools:text="R$ 1100,00"
+                        android:textColor="@color/grayText"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/totalPriceLabel"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/totalPriceLabel" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/genericError"
+        layout="@layout/generic_error_layout"
+        tools:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</FrameLayout>

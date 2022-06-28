@@ -123,7 +123,7 @@ class UserProfileFragment : Fragment() {
             binding.profileIv.setUrlImage(profile.avatarUrl, binding.root)
             binding.fullNameTv.text = profile.fullName
             binding.cityStateTv.text =
-                resources.getString(R.string.city_state, profile.city, profile.stateAbbr)
+                getString(R.string.city_state, profile.city, profile.stateAbbr)
         }
     }
 
@@ -131,12 +131,16 @@ class UserProfileFragment : Fragment() {
         with(binding) {
             leftArrowIv.setOnClickListener {
                 orderAdapter.actualOrderPosition?.let { position ->
-                    statusRv.smoothScrollToPosition(position - 1)
+                    if (position > 0) {
+                        statusRv.smoothScrollToPosition(position - 1)
+                    }
                 }
             }
             rightArrowIv.setOnClickListener {
                 orderAdapter.actualOrderPosition?.let { position ->
-                    statusRv.smoothScrollToPosition(position + 1)
+                    if (position < orderAdapter.currentList.size - 1){
+                        statusRv.smoothScrollToPosition(position + 1)
+                    }
                 }
             }
         }
@@ -184,7 +188,7 @@ class UserProfileFragment : Fragment() {
     }
 
     private fun updateOrderTitle() {
-        binding.orderTitleTv.text = resources.getString(
+        binding.orderTitleTv.text = getString(
             R.string.order_title,
             orderAdapter.getActualOrder()?.orderId,
             orderAdapter.getActualOrder()?.subModelName

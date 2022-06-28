@@ -32,9 +32,6 @@ class LoginActivity : AppCompatActivity() {
         actionListener()
         setupButtonListeners()
 
-        binding.emailEditText.setText("jessica@challenge.com")
-        binding.passwordEditText.setText("pass123")
-
         setupStatusBar()
     }
 

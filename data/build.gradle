@@ -52,6 +52,7 @@ dependencies {
     implementation dependencies.gson
     implementation dependencies.koin
     implementation dependencies.koinCore
+    implementation dependencies.loggingInterceptor
     testImplementation testDependencies.junit
     androidTestImplementation testDependencies.extJunit
     androidTestImplementation testDependencies.espresso

@@ -20,6 +20,7 @@ ext {
     koinVersion = '3.2.0'
     retrofitVersion = '2.9.0'
     roomVersion = '2.3.0'
+    loggingInterceptorVersion = '4.10.0'
 
     skeletonVersion = '4.0.0'
 
@@ -57,6 +58,7 @@ ext {
             retrofit: "com.squareup.retrofit2:retrofit:$retrofitVersion",
             retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:$retrofitVersion",
             gson: "com.google.code.gson:gson:$gsonVersion",
+            loggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$loggingInterceptorVersion",
 
             //Room
             room: "androidx.room:room-runtime:$roomVersion",

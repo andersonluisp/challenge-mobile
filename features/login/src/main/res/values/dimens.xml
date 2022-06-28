@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="loginMargin">32dp</dimen>
+    <dimen name="top_margin_between_password_to_button">64dp</dimen>
+    <dimen name="login_logo_width">126dp</dimen>
+    <dimen name="login_logo_height">47dp</dimen>
+    <dimen name="top_margin_signup_to_logo">38dp</dimen>
+    <dimen name="sign_up_label_text_size">15sp</dimen>
+    <dimen name="top_margin_between_password_to_email">16dp</dimen>
+</resources>

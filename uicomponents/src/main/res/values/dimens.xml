@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="progress_button_text_size">11sp</dimen>
+    <dimen name="guide_start_vertical_margin">24dp</dimen>
+    <dimen name="guide_end_vertical_margin">24dp</dimen>
+</resources>

@@ -4,12 +4,14 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdk globalConfiguration["compileSdk"]
 
     defaultConfig {
         applicationId "br.com.andersonluisdev.androidchallenge"
-        minSdk 23
-        targetSdk 32
+        minSdk globalConfiguration["minSdk"]
+        targetSdk globalConfiguration["targetSdk"]
         versionCode 1
         versionName "1.0"
 
@@ -27,17 +29,28 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = globalConfiguration["jvmTarget"]
     }
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'com.google.android.material:material:1.6.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    def dependencies = rootProject.ext.dependencies
+    def testDependencies = rootProject.ext.testDependencies
+    def modules = rootProject.ext.modules
+
+    implementation project(modules.login)
+    implementation project(modules.data)
+    implementation project(modules.domain)
+    implementation project(modules.home)
+
+    implementation dependencies.koin
+    implementation dependencies.koinCore
+    implementation dependencies.ktx
+    implementation dependencies.appCompat
+    implementation dependencies.material
+    implementation dependencies.constraintLayout
+    testImplementation testDependencies.junit
+    androidTestImplementation testDependencies.extJunit
+    androidTestImplementation testDependencies.espresso
 }

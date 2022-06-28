@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.faltenreich.skeletonlayout.SkeletonLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayBackground"
+    android:id="@+id/skeleton">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="32dp"
+            tools:context=".presentation.fragment.orderdetails.fragment.OrderDetailsFragment">
+
+            <ImageView
+                android:id="@+id/carImageSliderSkeleton"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/car_sample"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@null" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/dotsTabLayoutSkeleton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabBackground="@drawable/tab_selector"
+                app:tabGravity="center"
+                app:tabMode="fixed"
+                app:tabMinWidth="1dp"
+                app:tabPaddingBottom="1dp"
+                app:tabPaddingTop="1dp"
+                android:background="@color/grayBackground"
+                app:tabIndicatorHeight="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carImageSliderSkeleton"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/carInfoLayoutSkeleton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:background="@color/white"
+                android:paddingHorizontal="@dimen/screen_margin"
+                android:paddingBottom="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dotsTabLayoutSkeleton">
+
+                <TextView
+                    android:id="@+id/yearBrandTvSkeleton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:layout_marginEnd="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="2020 Volkswagen"
+                    android:textColor="@color/grayText"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@id/monthlyPaymentLabelSkeleton"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/monthlyPaymentLabelSkeleton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mensalidade"
+                    android:textColor="@color/grayText"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="@id/yearBrandTvSkeleton"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/modelTvSkeleton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/sfuidisplay_medium"
+                    android:maxLines="1"
+                    android:text="Golf"
+                    android:textColor="@color/primary_700"
+                    android:textSize="26sp"
+                    app:layout_constraintEnd_toStartOf="@id/priceTvSkeleton"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/yearBrandTvSkeleton" />
+
+                <TextView
+                    android:id="@+id/priceTvSkeleton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfuidisplay_medium"
+                    android:text="R$1100"
+                    android:textColor="@color/primary_700"
+                    android:textSize="26sp"
+                    app:layout_constraintBottom_toBottomOf="@id/modelTvSkeleton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/modelTvSkeleton" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/carFeaturesLayoutSkeleton"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/white"
+                android:paddingHorizontal="32dp"
+                android:paddingBottom="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carInfoLayoutSkeleton">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/verticalCarFeatureGuide50Skeleton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/horizontalCarFeatureGuide50Skeleton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:background="@color/gray_border"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/verticalCarFeatureGuide50Skeleton"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/gray_border"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/horizontalCarFeatureGuide50Skeleton" />
+
+                <TextView
+                    android:id="@+id/carFuelTvSkeleton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Flex"
+                    android:textColor="@color/grayText"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/horizontalCarFeatureGuide50Skeleton"
+                    app:layout_constraintEnd_toEndOf="@id/verticalCarFeatureGuide50Skeleton"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/carDoorsTvSkeleton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="4 Portas"
+                    android:textColor="@color/grayText"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/horizontalCarFeatureGuide50Skeleton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/verticalCarFeatureGuide50Skeleton"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/carEngineTypeTvSkeleton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Manual"
+                    android:textColor="@color/grayText"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/verticalCarFeatureGuide50Skeleton"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/horizontalCarFeatureGuide50Skeleton" />
+
+                <TextView
+                    android:id="@+id/carEngineTvSkeleton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Motor 1.0"
+                    android:textColor="@color/grayText"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/verticalCarFeatureGuide50Skeleton"
+                    app:layout_constraintTop_toTopOf="@id/horizontalCarFeatureGuide50Skeleton" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/informationLabelSkeleton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingHorizontal="@dimen/screen_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carFeaturesLayoutSkeleton">
+
+                <TextView
+                    android:id="@+id/logoutTvSkeleton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Informações da Assinatura"
+                    android:textColor="@color/grayText"
+                    android:textSize="@dimen/user_profile_options_text_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/horizontalLineLogoutSkeleton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_divisor_thickness"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:background="@color/primary_200"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/logoutTvSkeleton" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/subscriptionsCardSkeleton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/screen_margin"
+                android:layout_marginTop="20dp"
+                android:background="@color/white"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/informationLabelSkeleton"
+                app:strokeColor="@color/gray_border"
+                app:strokeWidth="1dp">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="66dp"
+                    android:paddingVertical="8dp">
+
+                    <View
+                        android:id="@+id/firstVerticalSeparatorSkeleton"
+                        android:layout_width="1dp"
+                        android:layout_height="0dp"
+                        android:background="@color/gray_border"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/secondVerticalSeparatorSkeleton"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/secondVerticalSeparatorSkeleton"
+                        android:layout_width="1dp"
+                        android:layout_height="0dp"
+                        android:background="@color/gray_border"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/firstVerticalSeparatorSkeleton"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/monthsValueTvSkeleton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        android:text="12"
+                        android:textColor="@color/grayText"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toTopOf="@id/monthsValueLabelSkeleton"
+                        app:layout_constraintEnd_toEndOf="@id/firstVerticalSeparatorSkeleton"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/monthsValueLabelSkeleton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="meses"
+                        android:textColor="@color/grayText"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/firstVerticalSeparatorSkeleton"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/monthsValueTvSkeleton" />
+
+
+                    <TextView
+                        android:id="@+id/planTypeValueTvSkeleton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        android:text="24"
+                        android:textColor="@color/grayText"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toTopOf="@id/monthsValueLabelSkeleton"
+                        app:layout_constraintEnd_toEndOf="@id/secondVerticalSeparatorSkeleton"
+                        app:layout_constraintStart_toStartOf="@id/firstVerticalSeparatorSkeleton"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/planTypeValueLabelSkeleton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="meses"
+                        android:textColor="@color/grayText"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/secondVerticalSeparatorSkeleton"
+                        app:layout_constraintStart_toStartOf="@id/firstVerticalSeparatorSkeleton"
+                        app:layout_constraintTop_toBottomOf="@id/monthsValueTvSkeleton" />
+
+                    <TextView
+                        android:id="@+id/additionalFranchiseValueTvSkeleton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        android:text="R$1,50"
+                        android:textColor="@color/grayText"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toTopOf="@id/monthsValueLabelSkeleton"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/secondVerticalSeparatorSkeleton"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/additionalFranchiseValueLabelSkeleton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="km adicional"
+                        android:textColor="@color/grayText"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/secondVerticalSeparatorSkeleton"
+                        app:layout_constraintTop_toBottomOf="@id/monthsValueTvSkeleton" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/valueLabelSkeleton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingHorizontal="@dimen/screen_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/subscriptionsCardSkeleton">
+
+                <TextView
+                    android:id="@+id/valueTvSkeleton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Valores"
+                    android:textColor="@color/grayText"
+                    android:textSize="@dimen/user_profile_options_text_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/horizontalLinevalueSkeleton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_divisor_thickness"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:background="@color/primary_200"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/valueTvSkeleton" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/valueCardSkeleton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/screen_margin"
+                android:layout_marginTop="20dp"
+                android:background="@color/white"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/valueLabelSkeleton"
+                app:strokeColor="@color/gray_border"
+                app:strokeWidth="1dp">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="135dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:id="@+id/monthlyPriceLabelSkeleton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        android:text="Aluguel Mensal"
+                        android:textColor="@color/grayText"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toTopOf="@id/extrasPriceLabelSkeleton"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/monthlyPriceValueSkeleton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        android:text="R$ 1100,00"
+                        android:textColor="@color/grayText"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/monthlyPriceLabelSkeleton"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/monthlyPriceLabelSkeleton" />
+
+                    <TextView
+                        android:id="@+id/extrasPriceLabelSkeleton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        android:text="Acessórios"
+                        android:textColor="@color/grayText"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toTopOf="@id/totalPriceLabelSkeleton"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/monthlyPriceLabelSkeleton"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/extrasPriceValueSkeleton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        android:text="R$ 0,00"
+                        android:textColor="@color/grayText"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/extrasPriceLabelSkeleton"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/extrasPriceLabelSkeleton" />
+
+                    <TextView
+                        android:id="@+id/totalPriceLabelSkeleton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        android:text="Total"
+                        android:textColor="@color/grayText"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/extrasPriceLabelSkeleton"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/totalPriceValueSkeleton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        android:text="R$ 1100,00"
+                        android:textColor="@color/grayText"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/totalPriceLabelSkeleton"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/totalPriceLabelSkeleton" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.faltenreich.skeletonlayout.SkeletonLayout>

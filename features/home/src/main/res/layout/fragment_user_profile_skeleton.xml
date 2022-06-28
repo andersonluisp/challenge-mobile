@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.faltenreich.skeletonlayout.SkeletonLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/skeleton">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/userProfileContainerSkeleton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".presentation.fragment.userprofile.fragment.UserProfileFragment">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileIvSkeleton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+            app:srcCompat="@drawable/sample_profile" />
+
+        <TextView
+            android:id="@+id/fullNameTvSkeleton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Jessica Joe"
+            android:textColor="@color/grayText"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/cityStateTvSkeleton"
+            app:layout_constraintStart_toEndOf="@id/profileIvSkeleton"
+            app:layout_constraintTop_toTopOf="@id/profileIvSkeleton"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/cityStateTvSkeleton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="São Paulo - SP"
+            android:textColor="@color/primary_700"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/profileIvSkeleton"
+            app:layout_constraintStart_toStartOf="@id/fullNameTvSkeleton"
+            app:layout_constraintTop_toBottomOf="@id/fullNameTvSkeleton" />
+
+        <TextView
+            android:id="@+id/statusLabelTvSkeleton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Status de Acompanhamento"
+            android:textColor="@color/grayText"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profileIvSkeleton" />
+
+        <View
+            android:id="@+id/horizontalLineStatusSkeleton"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/primary_200"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/statusLabelTvSkeleton" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/orderTitleContainerSkeleton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizontalLineStatusSkeleton">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/leftArrowIvSkeleton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:scaleType="centerInside"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_arrow_left_enabled" />
+
+            <TextView
+                android:id="@+id/orderTitleTvSkeleton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#1110 Volkswagen Golf Skeleton"
+                android:textColor="@color/grayText"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/rightArrowSkeleton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:scaleType="centerInside"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_arrow_right_enabled" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include
+            android:id="@+id/statusRvSkeleton"
+            layout="@layout/status_item_layout_skeleton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/orderTitleContainerSkeleton"/>
+
+        <TextView
+            android:id="@+id/mySubscriptionsTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Minhas Assinaturas"
+            android:textColor="@color/grayText"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/statusRvSkeleton" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mySubscriptionsArrowIvSkeleton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@id/mySubscriptionsTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mySubscriptionsTv"
+            app:srcCompat="@drawable/ic_arrow_right_disabled" />
+
+        <View
+            android:id="@+id/horizontalLineMySubscriptionsSkeleton"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/primary_200"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mySubscriptionsTv" />
+
+        <TextView
+            android:id="@+id/logoutTvSkeleton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Sair"
+            android:textColor="@color/grayText"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizontalLineMySubscriptionsSkeleton" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logoutArrowIvSkeleton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@id/logoutTvSkeleton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/logoutTvSkeleton"
+            app:srcCompat="@drawable/ic_arrow_right_disabled" />
+
+        <View
+            android:id="@+id/horizontalLineLogoutSkeleton"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/primary_200"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logoutTvSkeleton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.faltenreich.skeletonlayout.SkeletonLayout>

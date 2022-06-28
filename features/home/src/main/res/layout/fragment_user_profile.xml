@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/userProfileContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/screen_margin"
+            android:paddingHorizontal="@dimen/screen_margin"
+            tools:context=".presentation.fragment.userprofile.fragment.UserProfileFragment">
+
+            <include
+                android:id="@+id/skeletonLayout"
+                layout="@layout/fragment_user_profile_skeleton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="invisible" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/profileIv"
+                android:layout_width="@dimen/profile_avatar"
+                android:layout_height="@dimen/profile_avatar"
+                android:layout_marginTop="@dimen/margin_between_first_view_to_toolbar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+                tools:src="@drawable/sample_profile" />
+
+            <TextView
+                android:id="@+id/fullNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10dp"
+                android:textColor="@color/grayText"
+                android:textSize="@dimen/full_name_text_size"
+                android:fontFamily="@font/sfuidisplay_medium"
+                app:layout_constraintBottom_toTopOf="@id/cityStateTv"
+                app:layout_constraintStart_toEndOf="@id/profileIv"
+                app:layout_constraintTop_toTopOf="@id/profileIv"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="Jessica Joe" />
+
+            <TextView
+                android:id="@+id/cityStateTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_700"
+                android:fontFamily="@font/sfuidisplay_medium"
+                android:textSize="@dimen/city_state_text_size"
+                app:layout_constraintBottom_toBottomOf="@id/profileIv"
+                app:layout_constraintStart_toStartOf="@id/fullNameTv"
+                app:layout_constraintTop_toBottomOf="@id/fullNameTv"
+                tools:text="São Paulo - SP" />
+
+            <TextView
+                android:id="@+id/statusLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_tracking_status_to_avatar"
+                android:text="@string/tracking_status"
+                android:textColor="@color/grayText"
+                android:fontFamily="@font/sfuidisplay_medium"
+                android:textSize="@dimen/user_profile_options_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profileIv" />
+
+            <View
+                android:id="@+id/horizontalLineStatus"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_divisor_thickness"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:background="@color/primary_200"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/statusLabelTv" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/orderTitleContainerSkeleton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_order_title_to_status_tracking"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/horizontalLineStatus">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/leftArrowIv"
+                    android:layout_width="@dimen/ic_arrow_size"
+                    android:layout_height="@dimen/ic_arrow_size"
+                    android:scaleType="centerInside"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_left_enabled" />
+
+                <TextView
+                    android:id="@+id/orderTitleTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grayText"
+                    android:textSize="@dimen/order_title_text_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="#1110 Volkswagen Golf" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/rightArrowIv"
+                    android:layout_width="@dimen/ic_arrow_size"
+                    android:layout_height="@dimen/ic_arrow_size"
+                    android:scaleType="centerInside"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_right_enabled" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/statusRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_order_status_to_order_title"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/orderTitleContainerSkeleton"
+                tools:itemCount="1"
+                tools:listitem="@layout/status_item_layout_skeleton" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/userSubscriptionsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_my_subscriptions_to_order_status"
+                android:textColor="@color/grayText"
+                android:textSize="@dimen/user_profile_options_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/statusRv">
+
+                <TextView
+                    android:id="@+id/mySubscriptionsTv"
+                    android:fontFamily="@font/sfuidisplay_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/my_subscriptions"
+                    android:textColor="@color/grayText"
+                    android:textSize="@dimen/user_profile_options_text_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/mySubscriptionsArrowIv"
+                    android:layout_width="@dimen/ic_arrow_size"
+                    android:layout_height="@dimen/ic_arrow_size"
+                    android:scaleType="centerInside"
+                    app:layout_constraintBottom_toBottomOf="@id/mySubscriptionsTv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/mySubscriptionsTv"
+                    app:srcCompat="@drawable/ic_arrow_right_disabled" />
+
+                <View
+                    android:id="@+id/horizontalLineMySubscriptions"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_divisor_thickness"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:background="@color/primary_200"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mySubscriptionsTv" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/logoutContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_logout_to_my_subscriptions"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userSubscriptionsContainer">
+
+                <TextView
+                    android:id="@+id/logoutTv"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="@font/sfuidisplay_medium"
+                    android:layout_height="wrap_content"
+                    android:text="@string/logout"
+                    android:textColor="@color/grayText"
+                    android:textSize="@dimen/user_profile_options_text_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/logoutArrowIv"
+                    android:layout_width="@dimen/ic_arrow_size"
+                    android:layout_height="@dimen/ic_arrow_size"
+                    android:scaleType="centerInside"
+                    app:layout_constraintBottom_toBottomOf="@id/logoutTv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/logoutTv"
+                    app:srcCompat="@drawable/ic_arrow_right_disabled" />
+
+                <View
+                    android:id="@+id/horizontalLineLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_divisor_thickness"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:background="@color/primary_200"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/logoutTv" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/contentGroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                app:constraint_referenced_ids="profileIv, fullNameTv, cityStateTv, statusLabelTv, horizontalLineStatus, orderTitleContainerSkeleton, statusRv, userSubscriptionsContainer, logoutContainer"
+                tools:visibility="visible" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/genericError"
+        layout="@layout/generic_error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</FrameLayout>

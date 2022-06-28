@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.navigation.fragment.findNavController
 import br.com.andersonluisdev.common.baseviewmodel.extension.onAction
 import br.com.andersonluisdev.common.baseviewmodel.extension.onStateChange
 import br.com.andersonluisdev.home.databinding.FragmentUserSubscriptionsBinding
@@ -76,6 +77,10 @@ class UserSubscriptionsFragment : Fragment() {
     }
 
     private fun handleSubscriptionClick(subscription: SubscriptionDataUi) {
+        subscription.orderId?.let { orderId ->
+            val direction = UserSubscriptionsFragmentDirections.toOrderDetailsFragment(orderId)
+            findNavController().navigate(direction)
+        }
         Log.d("Challenge", subscription.orderId.toString())
     }
 

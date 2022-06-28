@@ -7,6 +7,7 @@
     <style name="ToolbarTextAppearence">
         <item name="android:textSize">11sp</item>
         <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/sfuidisplay_medium</item>
     </style>
 
     <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">

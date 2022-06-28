@@ -12,16 +12,33 @@
         tools:layout="@layout/fragment_user_profile">
         <action
             android:id="@+id/to_userSubscriptionsFragment"
-            app:destination="@id/userSubscriptionsFragment" />
+            app:destination="@id/userSubscriptionsFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/userSubscriptionsFragment"
         android:name="br.com.andersonluisdev.home.presentation.fragment.usersubscriptions.fragment.UserSubscriptionsFragment"
         android:label="Minhas Assinaturas"
-        tools:layout="@layout/fragment_user_subscriptions" >
+        tools:layout="@layout/fragment_user_subscriptions">
         <action
-            android:id="@+id/to_userProfileFragment"
-            app:destination="@id/userProfileFragment" />
+            android:id="@+id/to_orderDetailsFragment"
+            app:destination="@id/orderDetailsFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDetailsFragment"
+        android:name="br.com.andersonluisdev.home.presentation.fragment.orderdetails.fragment.OrderDetailsFragment"
+        android:label="Detalhes do pedido"
+        tools:layout="@layout/fragment_order_details">
+        <argument
+            android:name="orderId"
+            app:argType="integer" />
     </fragment>
 
 </navigation>

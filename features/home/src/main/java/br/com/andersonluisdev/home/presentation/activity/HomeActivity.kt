@@ -2,11 +2,13 @@ package br.com.andersonluisdev.home.presentation.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import br.com.andersonluisdev.home.R
 import br.com.andersonluisdev.home.databinding.ActivityHomeBinding
+
 
 class HomeActivity : AppCompatActivity() {
 
@@ -32,5 +34,28 @@ class HomeActivity : AppCompatActivity() {
             .findFragmentById(R.id.homeContainer) as NavHostFragment
         navController = homeContainerView.navController
         setupActionBarWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            binding.homeToolbar.title = destination.label
+            if (destination.id == R.id.orderDetailsFragment) {
+                binding.homeToolbar.setBackgroundColor(
+                    ContextCompat.getColor(
+                        this,
+                        br.com.andersonluisdev.common.R.color.grayBackground
+                    )
+                )
+                window.statusBarColor = ContextCompat.getColor(
+                    this,
+                    br.com.andersonluisdev.common.R.color.grayBackground
+                )
+            } else {
+                binding.homeToolbar.setBackgroundColor(
+                    ContextCompat.getColor(
+                        this,
+                        br.com.andersonluisdev.common.R.color.white
+                    )
+                )
+            }
+        }
     }
 }
